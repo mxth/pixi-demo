@@ -4,7 +4,7 @@ require ['pixi', 'underscore'], (pixi, _) ->
   secondTile = null
   stage = new pixi.Stage 0x888888
   renderer = pixi.autoDetectRenderer 640, 480
-  tileAtlas = ['./pairs/images.json']
+  tileAtlas = ['images.json']
   loader = new pixi.AssetLoader tileAtlas
   gameContainer = new pixi.DisplayObjectContainer()
   stage.addChild gameContainer

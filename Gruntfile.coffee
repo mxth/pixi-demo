@@ -42,6 +42,7 @@ module.exports = (grunt) ->
       dist:
         options:
           mainConfigFile: 'target/config.js'
+          baseUrl: '.'
           appDir: 'target'
           dir: 'dist'
 
@@ -54,4 +55,4 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', ['watch:compile']
   grunt.registerTask 'compile', ['clean:target', 'copy:compile', 'coffee:compile']
   grunt.registerTask 'compileDist', ['clean:target', 'copy:dist', 'coffee:compile']
-  grunt.registerTask 'dist', ['compileDist', 'requirejs', 'clean:dist']
+  grunt.registerTask 'dist', ['compileDist', 'requirejs', 'clean:dist', 'clean:target']

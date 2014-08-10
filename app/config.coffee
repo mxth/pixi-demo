@@ -1,5 +1,5 @@
 require.config
-  baseUrl: '.'
+  baseUrl: '../'
   paths:
     pixi: 'lib/pixi.dev'
     underscore: 'lib/underscore'
@@ -11,13 +11,15 @@ require.config
     underscore:
       exports: '_'
 
+
   modules: [
     name: 'pairs/main'
+    include: ['requireLib']
+  ,
+    name: 'parallax-scroller/main'
     include: ['requireLib']
   ]
 
   optimize: 'uglify2'
 
   generateSourceMaps: false
-
-
