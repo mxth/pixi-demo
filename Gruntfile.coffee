@@ -31,7 +31,7 @@ module.exports = (grunt) ->
         ext: '.js'
 
     clean:
-      target: 'target'
+      all: ['target', 'dist']
       dist: ['dist/lib', 'dist/build.txt', 'dist/config.js']
 
     copy:
@@ -52,7 +52,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
-  grunt.registerTask 'default', ['watch:compile']
-  grunt.registerTask 'compile', ['clean:target', 'copy:compile', 'coffee:compile']
-  grunt.registerTask 'compileDist', ['clean:target', 'copy:dist', 'coffee:compile']
-  grunt.registerTask 'dist', ['compileDist', 'requirejs', 'clean:dist', 'clean:target']
+  grunt.registerTask 'default', ['compile', 'watch:compile']
+  grunt.registerTask 'compile', ['clean:all', 'copy:compile', 'coffee:compile']
+  grunt.registerTask 'compileDist', ['clean:all', 'copy:dist', 'coffee:compile']
+  grunt.registerTask 'dist', ['compileDist', 'requirejs', 'clean:all']
