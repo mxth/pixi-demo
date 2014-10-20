@@ -4,7 +4,7 @@ define ['pixi'], (pixi) ->
 
   class Far extends pixi.TilingSprite
     constructor: ->
-      texture = pixi.Texture.fromImage 'bg-far.png'
+      texture = pixi.Texture.fromImage 'resources/bg-far.png'
       super texture, 512, 256
       @position.x = 0
       @position.y = 0
